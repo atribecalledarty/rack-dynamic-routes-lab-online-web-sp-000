@@ -11,7 +11,7 @@ class Application
       if matching_item
         resp.write matching_item.price
       else
-        resp.write "No such item"
+        resp.write "Item not found"
         resp.status = 400
       end
       
