@@ -7,8 +7,13 @@ class Application
     
     if req.path.match(/items/)
       item_name = req.patch.split("/items/").last
-      if @@items.detect {|item| item.name == item_name}
-        
+      matching_item = @@items.detect {|item| item.name == item_name}
+      if matching_item
+        resp.write matching_item.price
+      else
+        resp.write "No such item"
+        resp.status = 400
+      end
       
     else
       resp.write "Bad URL"
