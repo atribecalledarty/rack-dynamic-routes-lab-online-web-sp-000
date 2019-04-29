@@ -16,7 +16,7 @@ class Application
       end
       
     else
-      resp.write "Bad URL"
+      resp.write "Route not found"
       resp.status = 404
     end
     
